@@ -1,0 +1,459 @@
+<!-- ============================================================
+     MUSTAPHA AMBALI — PROJECTS PAGE
+     File: projects.html
+     Sections: navbar · page header · filter strip · project grid ·
+               CTA · footer
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#c2410c" />
+  <meta
+    name="description"
+    content="All projects by Mustapha Ambali — websites, web apps, and Python projects."
+  />
+  <title>Projects — Mustapha Ambali</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR (same as home — update "active" is handled by JS)
+       ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand" aria-label="Mustapha Ambali — home">
+        <span class="brand-mark" aria-hidden="true">MA</span>
+        <span class="brand-name">Mustapha<span>.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="projects.html" data-nav="projects" class="active">Projects</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" type="button"
+                aria-label="Toggle dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41
+                     M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        </button>
+
+        <button class="icon-btn hamburger" type="button"
+                aria-label="Open menu" aria-controls="mobileMenu"
+                aria-expanded="false">
+          <span class="hamburger-lines" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MOBILE MENU (shared markup — copy to every page)
+       ============================================================ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-backdrop" data-close-menu></div>
+    <aside class="mobile-menu-panel" role="dialog" aria-modal="true"
+           aria-label="Site menu">
+      <div class="mobile-menu-head">
+        <span class="mobile-menu-title">Menu</span>
+        <button class="mobile-menu-close" type="button"
+                aria-label="Close menu" data-close-menu>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links" aria-label="Mobile">
+        <a href="index.html" data-nav="home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5" /><path d="M5 9.5V21h14V9.5" />
+          </svg>
+          Home
+        </a>
+        <a href="projects.html" data-nav="projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5" />
+            <rect x="14" y="3" width="7" height="7" rx="1.5" />
+            <rect x="3" y="14" width="7" height="7" rx="1.5" />
+            <rect x="14" y="14" width="7" height="7" rx="1.5" />
+          </svg>
+          Projects
+        </a>
+        <a href="about.html" data-nav="about">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 4-7 8-7s8 3 8 7" />
+          </svg>
+          About
+        </a>
+        <a href="contact.html" data-nav="contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+          Contact
+        </a>
+      </nav>
+
+      <div class="mobile-menu-foot">
+        <a href="contact.html" class="btn btn-primary btn-block">Hire Me</a>
+      </div>
+    </aside>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         PAGE HEADER
+         ============================================================ -->
+    <section class="page-header">
+      <div class="container">
+        <span class="eyebrow">Portfolio</span>
+        <h1>Things I've built</h1>
+        <p>
+          A growing collection of websites, web apps, and side projects.
+          Every one is a real build — with a live demo and source code
+          when available.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FILTER STRIP
+         Buttons filter the grid below by data-category on each card.
+         EDIT: rename categories or add more if you like.
+         ============================================================ -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="filter-bar reveal" role="tablist" aria-label="Filter projects">
+          <button class="filter-btn active" type="button"
+                  data-filter="all" role="tab" aria-selected="true">
+            All
+          </button>
+          <button class="filter-btn" type="button"
+                  data-filter="web" role="tab" aria-selected="false">
+            Web
+          </button>
+          <button class="filter-btn" type="button"
+                  data-filter="app" role="tab" aria-selected="false">
+            App
+          </button>
+          <button class="filter-btn" type="button"
+                  data-filter="python" role="tab" aria-selected="false">
+            Python
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS GRID
+         EDIT: each card has data-category for the filter.
+         Categories used below: web, app, python
+         ============================================================ -->
+    <section class="section-tight">
+      <div class="container">
+        <div class="projects-grid" id="projectGrid">
+
+          <!-- EDIT: Project 1 — TaskFlow (web) -->
+          <article class="card project-card reveal" data-category="web">
+            <div class="project-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80"
+                alt="TaskFlow task manager screenshot"
+                loading="lazy" width="640" height="360"
+              />
+              <span class="project-badge">Web App</span>
+            </div>
+            <div class="project-body">
+              <h3>TaskFlow</h3>
+              <p>A minimal task manager that works offline and syncs across devices.</p>
+              <div class="tech-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-live" target="_blank" rel="noopener">
+                  Live Demo
+                </a>
+                <a href="#" class="link-code" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- EDIT: Project 2 — LocalBiz (web) -->
+          <article class="card project-card reveal" data-category="web">
+            <div class="project-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80"
+                alt="LocalBiz business landing page screenshot"
+                loading="lazy" width="640" height="360"
+              />
+              <span class="project-badge">Website</span>
+            </div>
+            <div class="project-body">
+              <h3>LocalBiz</h3>
+              <p>A responsive landing page for a local service provider — fast and clean.</p>
+              <div class="tech-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-live" target="_blank" rel="noopener">
+                  Live Demo
+                </a>
+                <a href="#" class="link-code" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- EDIT: Project 3 — PyTracker (python) -->
+          <article class="card project-card reveal" data-category="python">
+            <div class="project-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                alt="PyTracker expense dashboard screenshot"
+                loading="lazy" width="640" height="360"
+              />
+              <span class="project-badge">Python</span>
+            </div>
+            <div class="project-body">
+              <h3>PyTracker</h3>
+              <p>A Python-powered expense tracker with a simple web dashboard.</p>
+              <div class="tech-tags">
+                <span>Python</span><span>Flask</span><span>HTML</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-live" target="_blank" rel="noopener">
+                  Live Demo
+                </a>
+                <a href="#" class="link-code" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- EDIT: Project 4 — Sample app card (app) -->
+          <article class="card project-card reveal" data-category="app">
+            <div class="project-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80"
+                alt="HabitLoop habit tracker screenshot"
+                loading="lazy" width="640" height="360"
+              />
+              <span class="project-badge">Mobile</span>
+            </div>
+            <div class="project-body">
+              <h3>HabitLoop</h3>
+              <p>A lightweight habit tracker built as a progressive web app for low-end phones.</p>
+              <div class="tech-tags">
+                <span>PWA</span><span>JavaScript</span><span>IndexedDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-live" target="_blank" rel="noopener">
+                  Live Demo
+                </a>
+                <a href="#" class="link-code" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- EDIT: Project 5 — Sample app (app) -->
+          <article class="card project-card reveal" data-category="app">
+            <div class="project-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
+                alt="InvoiceMate invoice generator screenshot"
+                loading="lazy" width="640" height="360"
+              />
+              <span class="project-badge">App</span>
+            </div>
+            <div class="project-body">
+              <h3>InvoiceMate</h3>
+              <p>A tiny invoice generator for freelancers — works offline, exports a PDF.</p>
+              <div class="tech-tags">
+                <span>JavaScript</span><span>CSS</span><span>Canvas</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-live" target="_blank" rel="noopener">
+                  Live Demo
+                </a>
+                <a href="#" class="link-code" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- EDIT: Project 6 — Sample python (python) -->
+          <article class="card project-card reveal" data-category="python">
+            <div class="project-thumb">
+              <img
+                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80"
+                alt="LinkSaver bookmark manager screenshot"
+                loading="lazy" width="640" height="360"
+              />
+              <span class="project-badge">Python</span>
+            </div>
+            <div class="project-body">
+              <h3>LinkSaver</h3>
+              <p>A bookmark manager with tagging, search, and a clean reading view.</p>
+              <div class="tech-tags">
+                <span>Python</span><span>SQLite</span><span>Flask</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="link-live" target="_blank" rel="noopener">
+                  Live Demo
+                </a>
+                <a href="#" class="link-code" target="_blank" rel="noopener">
+                  Code
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Shown when a filter has no matches -->
+        <p id="emptyFilter" class="text-center text-muted"
+           style="display:none; padding: 40px 0;">
+          No projects in this category yet — more coming soon.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA BAND
+         ============================================================ -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <h2>Like what you see?</h2>
+          <p>Let's build something together. Tell me about your project and I'll reply within 24 hours.</p>
+          <a href="contact.html" class="btn">Get in touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER (shared)
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <a href="index.html" class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">MA</span>
+          <span>Mustapha Ambali</span>
+        </a>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="social-links" aria-label="Social links">
+        <a href="#" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2a3.34 3.34 0 0 1-1.5-.65 1.47 1.47 0 0 1-.42-.96 2.22 2.22 0 0 0-1.4-1.61.28.28 0 0 1 0-.5 2 2 0 0 1 1.8.8 2.1 2.1 0 0 0 2.9.56 2 2 0 0 1 .63-1.3c-2.1-.24-4.32-1.05-4.32-4.7a3.68 3.68 0 0 1 1-2.55 3.4 3.4 0 0 1 .09-2.52s.8-.25 2.62 1a9 9 0 0 1 4.76 0c1.82-1.25 2.62-1 2.62-1a3.4 3.4 0 0 1 .09 2.52 3.67 3.67 0 0 1 1 2.55c0 3.66-2.22 4.46-4.34 4.7a2.3 2.3 0 0 1 .65 1.8v2.67c0 .32.22.7.83.58A12 12 0 0 0 12 .5z"/>
+          </svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4V8zm7.5 0h3.83v2.19h.05a4.2 4.2 0 0 1 3.78-2.08c4.04 0 4.79 2.66 4.79 6.12V24h-4v-7.1c0-1.7-.03-3.88-2.37-3.88s-2.73 1.85-2.73 3.76V24h-4V8z"/>
+          </svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h7l4.8 6.4L18.9 2zm-1.2 18h1.7L7.4 3.9H5.6L17.7 20z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="footer-copy">
+        &copy; <span data-year>2025</span> Mustapha Ambali. Built with plain HTML, CSS &amp; JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SMALL PAGE-SPECIFIC SCRIPT — filters
+       (Kept inline because it's only used on this page.)
+       ============================================================ -->
+  <script>
+    (function () {
+      const buttons = document.querySelectorAll(".filter-btn");
+      const cards = document.querySelectorAll("#projectGrid .project-card");
+      const empty = document.getElementById("emptyFilter");
+      if (!buttons.length || !cards.length) return;
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Update active state
+          buttons.forEach((b) => {
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+
+          const filter = btn.getAttribute("data-filter");
+          let visible = 0;
+
+          cards.forEach((card) => {
+            const cat = card.getAttribute("data-category") || "";
+            const show = filter === "all" || cat === filter;
+            card.style.display = show ? "" : "none";
+            if (show) visible++;
+          });
+
+          if (empty) {
+            empty.style.display = visible === 0 ? "block" : "none";
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- Shared script (loaded last) -->
+  <script src="script.js"></script>
+</body>
+</html>
