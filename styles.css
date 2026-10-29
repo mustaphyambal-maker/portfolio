@@ -1441,3 +1441,57 @@ body.dark .contact-info-icon { color: var(--brand); }
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Custom styles for the "Read more" case study */
+.project-details {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+}
+
+.project-details summary {
+  color: var(--brand);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none; /* hides the default triangle */
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+}
+
+.project-details summary::-webkit-details-marker {
+  display: none; /* hides the triangle in Safari */
+}
+
+.project-details summary::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.project-details[open] summary::after {
+  transform: rotate(90deg); /* arrow points down when open */
+}
+
+.project-details summary:hover {
+  color: var(--brand-dark);
+}
+
+.details-content {
+  margin-top: 8px;
+  padding: 12px;
+  background: var(--surface-alt);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.details-content p {
+  margin-bottom: 8px;
+}
+
+.details-content p:last-child {
+  margin-bottom: 0;
+}
+
