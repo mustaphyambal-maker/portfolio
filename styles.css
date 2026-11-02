@@ -1,7 +1,6 @@
 /* ============================================================
    MUSTAPHA AMBALI — PORTFOLIO STYLES
    File: styles.css
-   Mobile-first. No frameworks. System fonts only.
    ============================================================ */
 
 /* 1. DESIGN TOKENS */
@@ -180,7 +179,8 @@ body.menu-open { overflow: hidden; }
 /* 8. SERVICES */
 .services-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
 .service-card { padding: 24px 22px; }
-.service-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px; background: var(--brand-soft); color: var(--brand-dark); margin-bottom: 16px; font-size: 1.5rem; }
+.service-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px; background: var(--brand-soft); color: var(--brand-dark); margin-bottom: 16px; }
+.service-icon svg { width: 26px; height: 26px; stroke: currentColor; }
 .service-card h3 { font-size: 1.05rem; margin-bottom: 6px; }
 .service-card p { font-size: 0.92rem; color: var(--text-muted); }
 
@@ -262,7 +262,20 @@ body.menu-open { overflow: hidden; }
 .social-links a:hover { color: var(--brand); border-color: var(--brand); background: var(--brand-soft); transform: translateY(-2px); }
 .footer-copy { font-size: 0.78rem; color: var(--text-muted); padding-top: 20px; border-top: 1px solid var(--border); text-align: center; }
 
-/* 14. RESPONSIVE (Tablet / Desktop) */
+/* 14. READ MORE CASE STUDY */
+.project-details { margin-top: 8px; margin-bottom: 12px; font-size: 0.88rem; }
+.project-details summary { color: var(--brand); font-weight: 600; cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 4px; padding: 4px 0; transition: color 0.2s; }
+.project-details summary::-webkit-details-marker { display: none; }
+.project-details summary::after { content: "→"; transition: transform 0.2s ease; }
+.project-details[open] summary::after { transform: rotate(90deg); }
+.project-details summary:hover { color: var(--brand-dark); }
+.details-content { margin-top: 8px; padding: 12px 14px; background: var(--surface-alt); border-radius: 8px; border: 1px solid var(--border); color: var(--text-muted); line-height: 1.55; animation: fadeIn 0.25s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+.details-content p { margin-bottom: 8px; font-size: 0.85rem; }
+.details-content p:last-child { margin-bottom: 0; }
+.details-content strong { color: var(--text); }
+
+/* 15. RESPONSIVE */
 @media (min-width: 640px) {
   h1 { font-size: 2.5rem; }
   h2 { font-size: 1.9rem; }
@@ -297,90 +310,4 @@ body.menu-open { overflow: hidden; }
   .projects-grid { grid-template-columns: repeat(3, 1fr); }
   .services-grid { grid-template-columns: repeat(3, 1fr); }
   .page-header h1 { font-size: 2.4rem; }
-}
-
-/* ============================================================
-   READ MORE CASE STUDY TOGGLE
-   ============================================================ */
-.project-details {
-  margin-top: 8px;
-  margin-bottom: 12px;
-  font-size: 0.88rem;
-}
-
-.project-details summary {
-  color: var(--brand);
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 4px 0;
-  transition: color 0.2s;
-}
-
-.project-details summary::-webkit-details-marker {
-  display: none;
-}
-
-.project-details summary::after {
-  content: "→";
-  transition: transform 0.2s ease;
-}
-
-.project-details[open] summary::after {
-  transform: rotate(90deg);
-}
-
-.project-details summary:hover {
-  color: var(--brand-dark);
-}
-
-.details-content {
-  margin-top: 8px;
-  padding: 12px 14px;
-  background: var(--surface-alt);
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  line-height: 1.55;
-  animation: fadeIn 0.25s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.details-content p {
-  margin-bottom: 8px;
-  font-size: 0.85rem;
-}
-
-.details-content p:last-child {
-  margin-bottom: 0;
-}
-
-.details-content strong {
-  color: var(--text);
-}
-
-/* ============================================================
-   PERFECT SCREENSHOT FIT
-   ============================================================ */
-.project-thumb {
-  background: var(--surface-alt) !important; 
-  display: block;
-  overflow: hidden;
-  position: relative;
-}
-
-.project-thumb img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; 
-  object-position: top center !important; /* Shows the top of the app */
-  transform: scale(1.15); /* Zooms in slightly to fill the width */
-  transform-origin: top center;
 }

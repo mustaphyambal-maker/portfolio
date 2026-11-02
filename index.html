@@ -94,16 +94,7 @@
         <div class="section-head">
           <span class="eyebrow">Featured Work</span>
           <h2>TaskFlow: Offline-First Task Manager</h2>
-          <p>An offline-first task manager with due dates, priorities, and a native-app feel. No sign-up required.</p>
-
-          <details class="project-details">
-            <summary>Read case study</summary>
-            <div class="details-content">
-              <p><strong>The Problem:</strong> Most to-do apps force you to create an account and stay online just to check off a task. For people with older phones or unreliable data, simple productivity is frustrating.</p>
-              <p><strong>The Solution:</strong> TaskFlow opens instantly and works completely offline. It features due dates, priorities, dark mode, and can be installed like a native app — no sign-ups, no loading screens.</p>
-              <p><strong>The Tech:</strong> Built with plain HTML, CSS, and JavaScript. Uses the Service Worker API for offline caching. No databases, no frameworks.</p>
-            </div>
-          </details>
+          <p class="lead">A fast, offline-first task manager that works on any device. Built with plain HTML, CSS, and JavaScript.</p>
         </div>
         
         <div class="card project-card" style="max-width: 800px; margin: 0 auto;">
@@ -111,7 +102,18 @@
             <img src="taskflow.jpeg" alt="TaskFlow app screenshot" loading="lazy" />
           </div>
           <div class="project-body">
+            <h3>TaskFlow</h3>
+            <p>An offline-first task manager with due dates, priorities, and a native-app feel. No sign-up required.</p>
             
+            <details class="project-details">
+              <summary>Read case study</summary>
+              <div class="details-content">
+                <p><strong>The Problem:</strong> Most to-do apps force you to create an account and stay online just to check off a task. For people with older phones or unreliable data, simple productivity is frustrating.</p>
+                <p><strong>The Solution:</strong> TaskFlow opens instantly and works completely offline. It features due dates, priorities, dark mode, and can be installed like a native app — no sign-ups, no loading screens.</p>
+                <p><strong>The Tech:</strong> Built with plain HTML, CSS, and JavaScript. Uses the Service Worker API for offline caching. No databases, no frameworks.</p>
+              </div>
+            </details>
+
             <div class="tech-tags">
               <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PWA</span>
             </div>
@@ -133,17 +135,34 @@
         </div>
         <div class="services-grid">
           <article class="card service-card">
-            <div class="service-icon">🌐</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+              </svg>
+            </div>
             <h3>Website Development</h3>
             <p>Fast, responsive sites that look sharp and load quickly, even on slow connections.</p>
           </article>
+          
           <article class="card service-card">
-            <div class="service-icon">📱</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="2" width="10" height="20" rx="2.5" />
+                <path d="M11 18h2" />
+              </svg>
+            </div>
             <h3>App Development</h3>
             <p>Lightweight web and Android apps that feel native and run smoothly on low-end devices.</p>
           </article>
+          
           <article class="card service-card">
-            <div class="service-icon">🎨</div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a9 9 0 1 0 9 9" />
+                <path d="M12 3v9l7 4" />
+              </svg>
+            </div>
             <h3>UI Design</h3>
             <p>Clean, modern interfaces with a focus on usability — from rough idea to polished prototype.</p>
           </article>
