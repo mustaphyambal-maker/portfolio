@@ -370,19 +370,17 @@ body.menu-open { overflow: hidden; }
    PERFECT SCREENSHOT FIT
    ============================================================ */
 .project-thumb {
-  background: #12110f !important; /* Dark background to match the app's dark mode */
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  background: var(--surface-alt) !important; 
+  display: block;
   overflow: hidden;
+  position: relative;
 }
 
 .project-thumb img {
-  width: 100%;
-  height: auto;
-  max-height: 100%;
-  object-fit: contain !important; 
-  object-position: top center !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; 
+  object-position: top center !important; /* Shows the top of the app */
+  transform: scale(1.15); /* Zooms in slightly to fill the width */
+  transform-origin: top center;
 }
-
