@@ -298,3 +298,70 @@ body.menu-open { overflow: hidden; }
   .services-grid { grid-template-columns: repeat(3, 1fr); }
   .page-header h1 { font-size: 2.4rem; }
 }
+
+/* ============================================================
+   READ MORE CASE STUDY TOGGLE
+   ============================================================ */
+.project-details {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+}
+
+.project-details summary {
+  color: var(--brand);
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.project-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-details summary::after {
+  content: "→";
+  transition: transform 0.2s ease;
+}
+
+.project-details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.project-details summary:hover {
+  color: var(--brand-dark);
+}
+
+.details-content {
+  margin-top: 8px;
+  padding: 12px 14px;
+  background: var(--surface-alt);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  line-height: 1.55;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.details-content p {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.details-content p:last-child {
+  margin-bottom: 0;
+}
+
+.details-content strong {
+  color: var(--text);
+}
