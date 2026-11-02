@@ -365,3 +365,10 @@ body.menu-open { overflow: hidden; }
 .details-content strong {
   color: var(--text);
 }
+
+/* Ensure the TaskFlow screenshot fits perfectly inside the card */
+.project-thumb img {
+  object-fit: contain !important;
+  background: var(--surface); /* Adds a clean background behind the image */
+  padding: 20px; /* Adds a nice border around the image */
+}
